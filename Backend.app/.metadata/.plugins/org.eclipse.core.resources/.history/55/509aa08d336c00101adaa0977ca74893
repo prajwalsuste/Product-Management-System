@@ -1,0 +1,46 @@
+package com.mydata.ems.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mydata.ems.dto.ProductDTO;
+import com.mydata.ems.exception.ResourceNotFoundException;
+import com.mydata.ems.service.ProductService;
+
+@RestController
+@RequestMapping("/pms")
+public class ProductController {
+	@Autowired
+	ProductService ps;
+
+	public void setPs(ProductService ps) {
+		this.ps = ps;
+	}
+	
+	@PostMapping
+	public ResponseEntity<ProductDTO> savePro(@RequestBody ProductDTO pdto)
+	{
+		ProductDTO saved =ps.saveProduct(pdto);
+		return ResponseEntity.ok(saved);		
+	}
+	
+	@GetMapping
+	public ResponseEntity<List<ProductDTO>> getAllProducts(){
+		List<ProductDTO> allPro=ps.getAllProducts();
+		return ResponseEntity.ok(allPro);
+	}
+	@GetMapping("{id}")
+	public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id)throws ResourceNotFoundException{
+		ProductDTO pro=ps.getProductById(id);
+		return ResponseEntity.ok(pro);
+	}
+	
+}

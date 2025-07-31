@@ -1,0 +1,27 @@
+package com.mydata.ems.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.mydata.ems.dto.ProductDTO;
+import com.mydata.ems.repository.ProductRepository;
+
+
+public class ProductServiceImpl implements ProductService {
+
+	
+	ProductRepository proRepo;
+	
+	public void setProRepo(ProductRepository proRepo) {
+		this.proRepo = proRepo;
+	}
+
+	@Override
+	@Autowired
+	public ProductDTO saveProduct(ProductDTO pdto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

@@ -1,0 +1,15 @@
+package com.mydata.ems.service;
+
+import java.util.List;
+
+import com.mydata.ems.dto.ProductDTO;
+import com.mydata.ems.exception.ResourceNotFoundException;
+
+public interface ProductService {
+
+	public ProductDTO saveProduct(ProductDTO pdto);
+	public List<ProductDTO> getAllProducts();
+	public ProductDTO getProductById(Long id) throws ResourceNotFoundException;
+	public void deleteProduct(Long id) throws ResourceNotFoundException;
+	public ProductDTO updateProduct(Long id ,ProductDTO pd) throws ResourceNotFoundException;
+}

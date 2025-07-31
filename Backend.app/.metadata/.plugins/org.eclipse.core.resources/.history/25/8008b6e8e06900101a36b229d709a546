@@ -1,0 +1,8 @@
+package com.mydata.ems.service;
+
+import com.mydata.ems.dto.ProductDTO;
+
+public interface ProductService {
+
+	public ProductDTO saveProduct(ProductDTO pdto);
+}

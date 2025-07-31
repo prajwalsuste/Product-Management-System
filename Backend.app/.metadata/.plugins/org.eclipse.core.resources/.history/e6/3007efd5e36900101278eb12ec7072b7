@@ -1,0 +1,11 @@
+package com.mydata.ems.service;
+
+import java.util.List;
+
+import com.mydata.ems.dto.ProductDTO;
+
+public interface ProductService {
+
+	public ProductDTO saveProduct(ProductDTO pdto);
+	public List<ProductDTO> getAllProducts();
+}

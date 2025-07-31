@@ -1,0 +1,5 @@
+package com.mydata.ems.entity;
+
+public class Product {
+
+}

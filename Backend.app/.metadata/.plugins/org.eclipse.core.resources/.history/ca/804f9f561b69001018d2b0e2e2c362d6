@@ -1,0 +1,5 @@
+package com.mydata.ems.mapper;
+
+public class ProductMapper {
+
+}

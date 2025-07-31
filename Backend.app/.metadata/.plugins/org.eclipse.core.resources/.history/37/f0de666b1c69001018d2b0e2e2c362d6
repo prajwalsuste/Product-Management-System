@@ -1,0 +1,5 @@
+package com.mydata.ems.exception;
+
+public class ResouceNotFoundException {
+
+}
